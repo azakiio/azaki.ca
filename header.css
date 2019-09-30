@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: block;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+.header {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 4%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header .profile {
+  margin-right: 1em;
+
+}
+.header .profile img{
+  border-radius: 100%;
+  border: solid 1px rgba(255, 255, 255, 0.25);
+  display: flex;
+  width: 5em;
+}
+
+.header h1{
+  display: flex;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header li {
+  float: left;
+  margin-right: 1em;
+}
+
+.nav {
+  margin-top: 0.5em;
+}
+.nav a{
+  display: flex;
+  color: hsl(0, 100%, 33%);
+  text-decoration: none;
+  transition: color 200ms;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.nav a:hover{
+  color: hsl(0, 100%, 20%);
+}
+
+.icons {
+  margin-top: 1em;
+}
+
+.icons a img{
+  display: flex;
+  width: 28px;
+  height: 28px;
+  transition: opacity 200ms;
+}
+
+.icons a img:hover{
+  opacity: 0.6;
+}
+
+.wrapper{
+  margin-left: calc(5% + 6em)
+}
+
+#myCanvas {
+  height: 100%;
+  width: 100%;
+}

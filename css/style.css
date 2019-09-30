@@ -1,0 +1,115 @@
+.content {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 20px;
+    flex: 1 0;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.content p {
+    margin: 10px 0;
+}
+
+.numinput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: vertical;
+    margin-top: 10px;
+    outline: none;
+    overflow-y: hidden;
+    font: inherit;
+}
+
+.form_btn {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0.3em;
+    border-radius: 2em;
+    border: none;
+    font: inherit;
+    background-color: #4CAF50;
+    text-align: center;
+    transition: all 0.2s;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+.red_btn {
+    background-color: #f44336;
+}
+
+.operations {
+    font-weight: bold;
+}
+
+.options td {
+    padding: 8px 8px 8px 0;
+}
+
+.options th {
+    text-align: left;
+    padding: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.puzzle_out {
+    border-collapse: collapse;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.puzzle_out td {
+    border: 1px solid #D8DCE4;
+}
+
+
+.puzzle_out input {
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 30px;
+}
+
+.puzzle_out input:focus {
+    outline: none;
+}
+
+.puzzle_out .bb {
+    border-bottom: 2px solid #D8DCE4;
+}
+
+.puzzle_out .br {
+    border-right: 2px solid #D8DCE4;
+}
+
+
+
+/* dollargame */
+#game {
+    text-align: center;
+    width: 700px;
+    height: 700px;
+    position: relative;
+}
