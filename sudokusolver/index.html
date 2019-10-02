@@ -2,342 +2,425 @@
 <html>
 
 <head>
-        <title>SudokuSolver - aZaki</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="sudoku.js"></script>
-        <link rel="stylesheet" href="/header.css">
-        <link rel="stylesheet" href="/css/style.css">
+  <title>SudokuSolver - aZaki</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="sudoku.js"></script>
+  <link rel="stylesheet" href="/header.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-        <div class="header">
-                <div class="profile">
-                        <img src="/ProfilePicSquare.webp" />
-                </div>
-                <div>
-                        <h1>Adham Zaki</h1>
-                        <ul class="nav">
-                                <li><a href="/index.html">Home</a></li>
-                                <li><a href="/dollargame/index.html">Projects</a></li>
-                                <li><a href="/sudokusolver/index.html">About</a></li>
-                        </ul>
-                        <ul class="icons">
-                                <li><a href="#"><img src="/icons/linkedin.svg"></a></li>
-                                <li><a href="#"><img src="/icons/instagram.svg"></a></li>
-                                <li><a href="#"><img src="/icons/github.svg"></a></li>
-                                <li><a href="#"><img src="/icons/envelope.svg"></a></li>
-                        </ul>
-                </div>
-        </div>
-
-        <h1>SudokuSolver</h1>
-        <div class="content">
-                <form onsubmit="return false;">
-                        <table id="puzzle" class="puzzle_out">
-                                <tbody>
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell bb" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-
-                                        <tr>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell br" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                                <td><input type="text" pattern="[1-9]" inputmode="numeric" size="1"
-                                                                maxlength="1" autocomplete="off" tabindex="0"
-                                                                class="cell" /></td>
-                                        </tr>
-                                </tbody>
-                        </table>
-                        <div class="buttons">
-                                <button class="form_btn" type="button" onclick="solve();">Solve</button>
-                                <button class="form_btn" type="button" onclick="giveExample();">Example</button>
-                                <button class="form_btn red_btn" type="reset">Reset</button>
-                        </div>
-                </form>
-
-                <div>
-                        <div id="error" style="text-align: center; color: #f44336">
-
-                        </div>
-                </div>
-                <div>
+  <div class="header">
+    <div class="profile">
+      <img src="/ProfilePicSquare.webp" />
+    </div>
+    <div>
+      <h1>Adham Zaki</h1>
+      <ul class="nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#myCanvas">Projects</a></li>
+        <li><a href="/about/index.html">About</a></li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/adhamzaki/"><img src="/icons/linkedin.svg" /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/azakiio/"><img src="/icons/instagram.svg" /></a>
+        </li>
+        <li>
+          <a href="https://github.com/azakiio"><img src="/icons/github.svg" /></a>
+        </li>
+        <li>
+          <a href="mailto:azakica@gmail.com"><img src="/icons/envelope.svg" /></a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
 
-                        <p>The output will display all the possible ways to go from the starting number to the
-                                goal
-                                number using the
-                                given
-                                operations within the given
-                                number of moves.</p>
+  <h1>SudokuSolver</h1>
+  <div class="wrapper">
+    <form onsubmit="return false;">
+      <table id="puzzle" class="puzzle_out">
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
 
-                        <p>This applet was inspired by this <a
-                                        href="https://play.google.com/store/apps/details?id=com.sm.calculateme">Game</a>
-                        </p>
-                </div>
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
 
-        </div>
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+          </tr>
 
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
 
-        <!-- <footer>
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell bb" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell br" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+            <td>
+              <input type="text" pattern="[1-9]" inputmode="numeric" size="1" maxlength="1" autocomplete="off"
+                tabindex="0" class="cell" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="buttons">
+        <button class="form_btn" type="button" onclick="solve();">
+          Solve
+        </button>
+        <button class="form_btn" type="button" onclick="giveExample();">
+          Example
+        </button>
+        <button class="form_btn red_btn" type="reset">Reset</button>
+      </div>
+    </form>
+
+    <div>
+      <div id="error" style="text-align: center; color: #f44336"></div>
+    </div>
+    <div>
+      <p>This works by solving formulating the Sudoku puzzle as an <a
+          href="https://en.wikipedia.org/wiki/Integer_programming">Integer Programming</a> problem and solved using <a
+          href="https://github.com/coin-or/pulp">PuLP</a></p>
+      <p>The solver is hosted on a Firebase Python 'Server' and returns the the solved puzzle</p>
+      <div class="top">Updates including solver time, algorithm comparison, and highlighting coming soon!</div>
+    </div>
+  </div>
+
+  <!-- <footer>
                 Footer Test
         </footer> -->
 </body>

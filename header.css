@@ -20,7 +20,8 @@ body {
 .header {
   max-width: 90%;
   margin: 0 auto;
-  padding-top: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -40,6 +41,7 @@ body {
   display: flex;
   font-size: 28px;
   font-weight: normal;
+  margin-bottom: 10px;
 }
 
 .header ul {
@@ -47,6 +49,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .header li {
@@ -85,11 +88,77 @@ body {
   opacity: 0.6;
 }
 
-.wrapper{
-  margin-left: calc(5% + 6em)
+.wrapper {
+  /* margin-left: calc(5% + 6em); */
+  width: 90%;
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 24px;
+  flex: 1 0;
 }
 
+.wrapper p {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.wrappera {
+  /* margin-left: calc(5% + 6em); */
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 24px;
+  flex: 1 0;
+}
+
+.wrapper a {
+  color: hsl(0, 100%, 33%);
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.wrapper a:hover {
+  color: hsl(0, 100%, 20%);
+}
+
+.wrappera p {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.wrappera a {
+  color: hsl(0, 100%, 33%);
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.wrappera a:hover {
+  color: hsl(0, 100%, 20%);
+}
+
+.wrappera h3 {
+  border-left: hsl(0, 100%, 33%) 5px solid; 
+  padding-left: 15px;
+  margin-top: 45px;
+}
+
+.top{
+  margin-top: 100px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.top a{
+  font-weight: 700;
+}
+
+
 #myCanvas {
-  height: 100%;
+  height: 50vh;
   width: 100%;
 }
+
+/* canvas[resize] {
+  width: 100%;
+  height: 50vh;
+} */

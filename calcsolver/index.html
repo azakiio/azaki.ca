@@ -2,58 +2,73 @@
 <html>
 
 <head>
-  <title>azaki - CalcSolver</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Azaki | CalcSolver</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="calcsolver.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/header.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/header.css" />
 </head>
 
 <body>
-    <div class="header">
-        <div class="profile">
-          <img src="/ProfilePicSquare.webp" />
-        </div>
-        <div>
-          <h1>Adham Zaki</h1>
-          <ul class="nav">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/dollargame/index.html">Projects</a></li>
-            <li><a href="/sudokusolver/index.html">About</a></li>
-          </ul>
-          <ul class="icons">
-            <li><a href="https://www.linkedin.com/in/adhamzaki/"><img src="/icons/linkedin.svg"></a></li>
-            <li><a href="https://www.instagram.com/azakiio/"><img src="/icons/instagram.svg"></a></li>
-            <li><a href="https://github.com/azakiio"><img src="/icons/github.svg"></a></li>
-            <li><a href="mailto:azakica@gmail.com"><img src="/icons/envelope.svg"></a></li>
-          </ul>
-        </div>
-      </div>
+  <div class="header">
+    <div class="profile">
+      <img src="/ProfilePicSquare.webp" />
+    </div>
+    <div>
+      <h1>Adham Zaki</h1>
+      <ul class="nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#myCanvas">Projects</a></li>
+        <li><a href="/about/index.html">About</a></li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/adhamzaki/"><img src="/icons/linkedin.svg" /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/azakiio/"><img src="/icons/instagram.svg" /></a>
+        </li>
+        <li>
+          <a href="https://github.com/azakiio"><img src="/icons/github.svg" /></a>
+        </li>
+        <li>
+          <a href="mailto:azakica@gmail.com"><img src="/icons/envelope.svg" /></a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <h1>CalcSolver</h1>
 
-  <div class="content">
+  <div class="wrapper">
     <form onsubmit="return false;">
-      <input class="numinput" type="number" id="start" placeholder="Starting Number">
-      <input class="numinput" type="number" id="goal" placeholder="Goal Number">
-      <input class="numinput" type="number" id="moves" placeholder="Number of Moves">
+      <input class="numinput" type="number" id="start" placeholder="Starting Number" />
+      <input class="numinput" type="number" id="goal" placeholder="Goal Number" />
+      <input class="numinput" type="number" id="moves" placeholder="Number of Moves" />
       <textarea class="numinput" id="operations" placeholder="Enter Allowed Operations (1 per line)"></textarea>
       <div class="buttons">
-        <button class="form_btn" type="button" onclick="solve();">Solve</button>
-        <button class="form_btn" type="button" onclick="giveExample();">Give Example</button>
+        <button class="form_btn" type="button" onclick="solve();">
+          Solve
+        </button>
+        <button class="form_btn" type="button" onclick="giveExample();">
+          Give Example
+        </button>
         <button class="form_btn red_btn" type="reset">Reset Inputs</button>
-        <button class="form_btn red_btn" type="button" onclick="clearResults();">Clear Results</button>
+        <button class="form_btn red_btn" type="button" onclick="clearResults();">
+          Clear Results
+        </button>
       </div>
     </form>
 
-    <div id="output">
-    </div>
+    <div id="output"></div>
 
     <div>
-      <p>The output will display all the possible ways to go from the starting number to the goal number using the given
-        operations within the given
-        number of moves.</p>
+      <p>
+        The output will display all the possible ways to go from the starting
+        number to the goal number using the given operations within the given
+        number of moves.
+      </p>
       <table class="options">
         <tr>
           <th colspan="2">Possible Operations</th>
@@ -76,16 +91,17 @@
         </tr>
       </table>
 
-      <p>This applet was inspired by this <a href="https://play.google.com/store/apps/details?id=com.sm.calculateme">Game</a> </p>
+      <p>
+        This applet was inspired by this
+        <a href="https://play.google.com/store/apps/details?id=com.sm.calculateme">Game</a> 
+      </p>
+      <div class="top">Updates coming soon!</div>
     </div>
-
   </div>
-
 
   <footer>
     Footer Test
   </footer>
-
 </body>
 
 </html>
