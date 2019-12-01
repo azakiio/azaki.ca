@@ -5,7 +5,7 @@
   <title>Azaki | CS:GO Predictor</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="sudoku.js"></script>
+  <script src="prediction.js"></script>
   <link rel="stylesheet" href="/header.css" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -43,15 +43,11 @@
   <h1>CS:GO Predictor</h1>
   <div class="wrapper">
     <form onsubmit="return false;">
-      
+      <input class="numinput" type="text" id="link" placeholder="Enter htlv match link" />
       <div class="buttons">
         <button class="form_btn" type="button" onclick="solve();">
           Solve
         </button>
-        <button class="form_btn" type="button" onclick="giveExample();">
-          Example
-        </button>
-        <button class="form_btn red_btn" type="reset">Reset</button>
       </div>
     </form>
 
