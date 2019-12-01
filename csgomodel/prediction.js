@@ -1,20 +1,40 @@
 function solve() {
 
   var link = document.getElementById("link").value;
-
-  var data = "{\"match\":\"https://www.hltv.org/matches/2337794/liquid-vs-fnatic-ecs-season-8-finals\"}";
-
   var xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-  
+
   xhr.addEventListener("readystatechange", function() {
     if(this.readyState === 4) {
-      console.log(this.responseText);
+      var stats = this.responseText.split(" ")
+      var matchup = document.getElementById('matchup')
+      var table = document.getElementById('stats')
+      document.getElementById('output').style.display = "block"
+      matchup.innerHTML = stats[0] + " VS " + stats[1]
+
+      table.rows[0].cells[0].innerHTML = "Model's Prediction<br>" + (parseFloat(stats[2])*100).toFixed(2) + "%"
+      table.rows[0].cells[2].innerHTML = "Model's Prediction<br>" + (parseFloat(stats[3])*100).toFixed(2) + "%"
+      table.rows[1].cells[0].innerHTML = "Betting Odds<br>" + stats[4]
+      table.rows[1].cells[2].innerHTML = "Betting Odds<br>" + stats[5]
+      table.rows[2].cells[0].innerHTML = "% Implied by Odds<br>" + (100/parseFloat(stats[4])).toFixed(2) + "%"
+      table.rows[2].cells[2].innerHTML = "% Implied by Odds<br>" + (100/parseFloat(stats[5])).toFixed(2) + "%"
+      
+      var k1 = 100 * ((parseFloat(stats[4]) - 1) * parseFloat(stats[2]) - parseFloat(stats[3]))/(parseFloat(stats[4]) - 1)
+      var k2 = 100 * ((parseFloat(stats[5]) - 1) * parseFloat(stats[3]) - parseFloat(stats[2]))/(parseFloat(stats[5]) - 1)
+
+      if (k1 < 1 && k2 < 1){
+        table.rows[1].cells[1].innerHTML = "<b>Skip</b>"
+      }
+      else if (k1 > 0){
+        table.rows[1].cells[1].innerHTML = "Bet <b>" + (k1/2).toFixed() + "%</b> on <b>" + stats[0] + "</b>"
+      }
+      else if (k2 > 0){
+        table.rows[1].cells[1].innerHTML = "Bet <b>" + (k2/2).toFixed() + "%</b> on <b>" + stats[1] + "</b>"
+      }
+
     }
   });
-  
-  xhr.open("POST", "https://us-central1-azakica.cloudfunctions.net/csgo_predict");
-  xhr.setRequestHeader("Content-Type", "application/json");
-  
-  xhr.send(data);
+
+  xhr.open("GET", "https://us-central1-azakica.cloudfunctions.net/csgo_predict?match=" + link);
+
+  xhr.send();
 }

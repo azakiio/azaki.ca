@@ -8,6 +8,8 @@
   <script src="prediction.js"></script>
   <link rel="stylesheet" href="/header.css" />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
@@ -46,21 +48,40 @@
       <input class="numinput" type="text" id="link" placeholder="Enter htlv match link" />
       <div class="buttons">
         <button class="form_btn" type="button" onclick="solve();">
-          Solve
+          Submit
         </button>
       </div>
     </form>
 
-    <div>
-      <div id="error" style="text-align: center; color: #f44336"></div>
+    <div id="output" style="max-width: 1000px;">
+      <div id="matchup"></div>
+      <table id="stats">
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div>
-      <p>This works by solving formulating the Sudoku puzzle as an <a
-          href="https://en.wikipedia.org/wiki/Integer_programming">Integer Programming</a> problem and solved using <a
-          href="https://github.com/coin-or/pulp">PuLP</a></p>
-      <p>The solver is hosted on a Firebase Python 'Server' and returns the the solved puzzle</p>
-      <div class="top">Updates including solver time, algorithm comparison, and highlighting coming soon!</div>
-    </div>
+      <p>1) Find the link of an unpcoming CS:GO match that you would like to bet on from <a
+          href="https://www.hltv.org/matches" target="_blank">HLTV</a> and submit the link above</p>
+      <p>2) We will provide information about the average odds offered by bookkeepers, and our model's predicted outcome of the match.</p>
+      <p>3) We then calculate a bet recommendation based on the <a href="https://en.wikipedia.org/wiki/Kelly_criterion" target="_blank">Kelly Criterion</a> 
+        which produced the optimal bet for maximizing the expected bankroll growth</p>
+        
   </div>
 
   <!-- <footer>
