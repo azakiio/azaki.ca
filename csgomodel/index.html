@@ -43,7 +43,7 @@
 
 
   <h1>CS:GO Predictor</h1>
-  <div class="wrapper">
+  <div class="wrapper" style="max-width: 1000px;">
     <form onsubmit="return false;">
       <input class="numinput" type="text" id="link" placeholder="Enter htlv match link" />
       <div class="buttons">
@@ -53,10 +53,13 @@
       </div>
     </form>
 
-    <div id="output" style="max-width: 1000px;">
-      <div id="matchup"></div>
+    <div id="output">
       <table id="stats">
         <tbody>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
           <tr>
             <td></td>
             <td></td>
@@ -76,15 +79,17 @@
       </table>
     </div>
     <div>
-      <p>1) Find the link of an unpcoming CS:GO match that you would like to bet on from <a
+      <p>1) Find the link of an upcoming CS:GO match that you would like to bet on from <a
           href="https://www.hltv.org/matches" target="_blank">HLTV</a> and submit the link above</p>
-      <p>2) We will provide information about the average odds offered by bookkeepers, and our model's predicted outcome of the match.</p>
-      <p>3) We then calculate a bet recommendation based on the <a href="https://en.wikipedia.org/wiki/Kelly_criterion" target="_blank">Kelly Criterion</a> 
+      <p>2) We will provide information about the average odds offered by bookkeepers, and our model's predicted outcome
+        of the match.</p>
+      <p>3) We then calculate a bet recommendation based on the <a href="https://en.wikipedia.org/wiki/Kelly_criterion"
+          target="_blank">Kelly Criterion</a>
         which produced the optimal bet for maximizing the expected bankroll growth</p>
-        
-  </div>
 
-  <!-- <footer>
+    </div>
+
+    <!-- <footer>
                 Footer Test
         </footer> -->
 </body>

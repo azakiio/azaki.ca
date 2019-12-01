@@ -117,10 +117,10 @@ var balls = [];
 
 // ADD AN ARRAY TO HOLD SOME RASTERS
 var texts =[]
-var names = ["CalcSolver", "SudokuSolver", "DollarGame", "FlappyCircle"];
-var links = ["/calcsolver/index.html", "/sudokusolver/index.html", "/dollargame/index.html", "/flappycircle/index.html"]
+var names = ["CalcSolver", "SudokuSolver", "DollarGame", "FlappyCircle", "CS:GO Predictor"];
+var links = ["/calcsolver/index.html", "/sudokusolver/index.html", "/dollargame/index.html", "/flappycircle/index.html", "/csgomodel/index.html"]
 
-var numBalls = 4;
+var numBalls = 5;
 for (var i = 0; i < numBalls; i++) {
 	var radius = Math.random() * 60 + 60;
 	var position = Point.random() * (view.size - 2*radius) + radius;
@@ -173,6 +173,9 @@ balls[2].path.onClick = function () {
 balls[3].path.onClick = function () {
 	window.open(links[3], "_self")
 }
+balls[4].path.onClick = function () {
+	window.open(links[4], "_self")
+}
 texts[0].onClick = function () {
 	window.open(links[0], "_self")
 }
@@ -184,4 +187,7 @@ texts[2].onClick = function () {
 }
 texts[3].onClick = function () {
 	window.open(links[3], "_self")
+}
+texts[4].onClick = function () {
+	window.open(links[4], "_self")
 }
