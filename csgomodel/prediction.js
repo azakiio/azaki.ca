@@ -5,7 +5,7 @@ function solve() {
 
   xhr.addEventListener("readystatechange", function() {
     if(this.readyState === 4) {
-      var stats = this.responseText.split(" ")
+      var stats = this.responseText.split("//")
       var table = document.getElementById('stats')
       document.getElementById('output').style.display = "block"
       table.rows[0].cells[0].innerHTML = stats[0]
