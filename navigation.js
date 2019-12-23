@@ -1,4 +1,5 @@
-// kynd.info 2014
+colors = ["#1abc9c", "#2ecc71", "#3498db", "#9b59b6", "#16a085", "#27ae60", "#2980b9", "#8e44ad", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b"]
+
 function Ball(r, p, v) {
 	this.radius = r;
 	this.point = p;
@@ -9,11 +10,7 @@ function Ball(r, p, v) {
 	this.boundOffsetBuff = [];
 	this.sidePoints = [];
 	this.path = new Path({
-		fillColor: {
-			hue: Math.random() * 360,
-			saturation: 1,
-			brightness: 1
-		},
+		fillColor: colors[Math.floor(Math.random() * colors.length)],
 		blendMode: 'lighter'
 	});
 
@@ -114,21 +111,20 @@ Ball.prototype = {
 //--------------------- main ---------------------
 
 var balls = [];
-
-// ADD AN ARRAY TO HOLD SOME RASTERS
-var texts =[]
-var names = ["CalcSolver", "SudokuSolver", "DollarGame", "FlappyCircle", "CS:GO Predictor"];
-var links = ["/calcsolver/index.html", "/sudokusolver/index.html", "/dollargame/index.html", "/flappycircle/index.html", "/csgomodel/index.html"]
+var texts = [];
+var names = ["Calc\nSolver", "Sudoku\nSolver", "Dollar\nGame", "Flappy\nBird", "CS:GO\nPredictor"];
+var links = ["/calcsolver/", "/sudokusolver/", "/dollargame/", "/flappybird/", "/csgomodel/"];
 
 var numBalls = 5;
 for (var i = 0; i < numBalls; i++) {
-	var radius = Math.random() * 60 + 60;
-	var position = Point.random() * (view.size - 2*radius) + radius;
+	factor = Math.min(Math.max(view.size._width, view.size._height) / 15, 60)
+	var radius = Math.random() * factor + factor;
+	var position = Point.random() * (view.size - 2 * radius) + radius;
 	var vector = new Point({
 		angle: 360 * Math.random(),
 		length: Math.random() * 1
 	});
-	
+
 	balls.push(new Ball(radius, position, vector));
 
 	// ADD RASTERS AND CLIP TO EACH "BALL"
@@ -138,7 +134,8 @@ for (var i = 0; i < numBalls; i++) {
 		fillColor: 'Black',
 		fontFamily: 'Rubik',
 		fontWeight: 'bold',
-		fontSize: radius/3.5
+		fontSize: 10 + radius / 6,
+		justification: 'center'
 	});
 	texts.push(text)
 }
@@ -158,36 +155,28 @@ function onFrame() {
 			view.element.style.cursor = "default";
 		}
 		texts[i].position = balls[i].path.position;
+		texts[i].onMouseEnter = function () {
+			view.element.style.cursor = "pointer";
+		}
 	}
 }
 
-balls[0].path.onClick = function () {
-	window.open(links[0], "_self")
+function onResize() {
+	for (var i = 0; i < balls.length; i++) {
+		factor = Math.min(Math.max(view.size._width, view.size._height) / 17, 60)
+		balls[i].radius = Math.random() * factor + factor;
+		balls[i].point = Point.random() * (view.size - 2 * balls[i].radius) + balls[i].radius;
+		texts[i].fontSize = 12 + balls[i].radius / 6
+	}
 }
-balls[1].path.onClick = function () {
-	window.open(links[1], "_self")
+
+function openLinks(i){
+	return function() {
+		window.open(links[i], "_self")
+	};
 }
-balls[2].path.onClick = function () {
-	window.open(links[2], "_self")
-}
-balls[3].path.onClick = function () {
-	window.open(links[3], "_self")
-}
-balls[4].path.onClick = function () {
-	window.open(links[4], "_self")
-}
-texts[0].onClick = function () {
-	window.open(links[0], "_self")
-}
-texts[1].onClick = function () {
-	window.open(links[1], "_self")
-}
-texts[2].onClick = function () {
-	window.open(links[2], "_self")
-}
-texts[3].onClick = function () {
-	window.open(links[3], "_self")
-}
-texts[4].onClick = function () {
-	window.open(links[4], "_self")
+
+for (var i = 0, l = balls.length; i < l; i++) {
+	balls[i].path.onClick = openLinks(i);
+	texts[i].onClick = openLinks(i);
 }

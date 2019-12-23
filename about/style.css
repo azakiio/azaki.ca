@@ -1,0 +1,39 @@
+.wrapper {
+    /* margin-left: calc(5% + 6em); */
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 24px;
+    flex: 1 0;
+}
+
+.wrapper p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.wrapper a {
+    color: hsl(0, 100%, 33%);
+    text-decoration: none;
+    transition: color 200ms;
+}
+
+.wrapper a:hover {
+    color: hsl(0, 100%, 20%);
+}
+
+.wrapper h3 {
+    border-left: hsl(0, 100%, 33%) 5px solid;
+    padding-left: 15px;
+    margin-top: 45px;
+}
+
+.top {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.top a {
+    font-weight: 700;
+}
