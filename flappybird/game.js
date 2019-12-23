@@ -97,7 +97,7 @@ const fg = {
     x: 0,
     y: cvs.height - 112,
 
-    dx: 20,
+    dx: 2,
 
     draw: function () {
         ctx.drawImage(sprite, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
@@ -249,7 +249,7 @@ const pipes = {
     h: 400,
     gap: 85,
     maxYPos: -150,
-    dx: 20,
+    dx: 2,
 
     draw: function () {
         for (let i = 0; i < this.position.length; i++) {
