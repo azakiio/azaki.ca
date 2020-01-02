@@ -1,0 +1,78 @@
+Adham Zaki
+azakica@gmail.com
++1 (416) 837-8540
+https://azaki.ca/
+https://github.com/azakiio
+
+EDUCATION
+BASc Industrial Engineering / University of Toronto
+Dean’s Honour List (2016 - Present), Minor in Artificial Intelligence Engineering,
+Certificate in Engineering Leadership
+
+
+SKILLS
+Programming: Python, JavaScript / Node.js, Java, MATLAB
+Tools/Libraries: KNIME, Pandas, Sklearn, P5.js, Google Marketing Platform
+Languages: English, German, Arabic, French
+
+
+EXPERIENCE
+Software Engineer / Procter & Gamble Oct/18 - May/19
+- Built an end-to-end development pipeline in Java that automatically detected software changes
+and published to server, reducing deployment time by 98%
+- Developed new plugins in Java for an open-source analytics software (KNIME) that leveraged Google
+and Facebook APIs, saving on average 150 hours per week (30 users) and reducing human error rate by 20%
+
+Web & Search Analyst / Procter & Gamble May/18 - Oct/18
+- Analyzed web traffic data in Google Analytics to assess performance of marketing strategies and suggest
+improvements, eliminating low-value advertising channels and increasing advertisement interaction by 15%
+- Automated web page performance audits using JavaScript and collaborated with brand teams to implement
+recommendations, increasing overall website traffic by 20% and improving Google Search rankings by ~2
+
+Full Stack Developer / University of Toronto Sep/17 - Dec/17
+- Developed ‘SmartyPants’ web application, a movie recommender system using JavaScript, Java, HTML, and CSS that
+suggests a curated list of films based a user’s generated profile using specific metrics and a predictive algorithm
+- Created a proprietary algorithm to suggest films with a 95% confidence interval
+- Conducted end-user testing and implemented results to improve application
+
+
+PROJECTS
+The Federalist Papers / MATLAB
+- Developed a support vector machine (SVM) in MATLAB that classified authorship of the disputed federalist
+papers using a non-probabilistic linear classifier
+- Implemented two separate algorithms to solve the classification problem with < 0.2% error
+- Consolidated and visualized results including algorithm comparison, significant features, and hyperparameter
+optimization
+
+SudokuSolver / Python
+- Built a Sudoku puzzle solving software in Python and published online using Google Cloud Functions as a
+backend
+- Represented puzzles as binary programming optimization problems and solved with the help of PuLP
+
+eSports Betting / Python
+- Developed a machine learning model in Python to predict the outcome of professional Counter-Strike games
+with 62% accuracy on unseen games
+- Created an open-source betting assistant that combines the model prediction with current commercial betting
+odds to suggest the recommended bet
+
+
+LEADERSHIP / VOLUNTEERING
+HiSkule Mentorship
+Student-led initiative with the goal to encourage high
+school students to pursue STEM related careers by
+providing personal guidance and support
+
+Saturday Program
+Non-profit tutoring and mentorship program that helps
+high school students from different faculties at the
+University of Toronto
+
+Go North Youth 2019
+Hands-on activities, demonstrations and workshops designed
+to ignite curiosity about STEM; created in partnership with
+Google Canada and Actua
+
+Hack the North 2018
+Attended Canada’s biggest hackathon as a sponsor
+representing Procter & Gamble with the goal of engaging
+students and assisting with recruitment
