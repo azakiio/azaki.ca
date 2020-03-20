@@ -2,37 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Azaki | R&eacute;sum&eacute;</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            display: block;
-            flex-direction: column;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Rubik', sans-serif;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Azaki | R&eacute;sum&eacute;</title>
+  <meta name="description" content="Adham Zaki's Amazing R&eacute;sum&eacute;" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <iframe src="https://drive.google.com/file/d/1Fi364vjjdIGQllow1Xw4xBmv2RkjMI8r/preview" width="100%"
-        height="100%" frameborder="0"></iframe>
+
+  <div id="nav_wrapper">
+    <div id="nav">
+      <i class="far fa-home" onclick='location.href = "/"'></i>
+      <select title="Change accent color" id="color_picker" onchange="setColor(this.value)">
+        <option value="" disabled selected>Choose a Color!</option>
+      </select>
+      <i title="Download PDF Version" class="far fa-file-pdf" onclick="window.print()"></i>
+      <i title="Download Text Version" class="far fa-file-alt" onclick="location.href = 'Resume_AdhamZaki.txt'"></i>
+    </div>
+  </div>
+
+  <div class="container">
+    <span class="header"><span class="light">Adham </span><span class="bold">Zaki</span></span>
+
+    <ul class="links">
+      <a href="mailto:azakica@gmail.com">
+        <li>azakica@gmail.com<i class="fas fa-envelope"></i></li>
+      </a>
+      <a href="tel:+14168378540">
+        <li>+1 (416) 837-8540<i class="fas fa-phone"></i></li>
+      </a>
+      <a href="https://azaki.ca/">
+        <li>https://azaki.ca/<i class="fas fa-home"></i></li>
+      </a>
+      <a href="https://github.com/azakiio">
+        <li>azakiio<i class="fab fa-github"></i></li>
+      </a>
+    </ul>
+
+
+    <div class="section-header color">
+      Education:
+    </div>
+    <div class="section-content">
+      <span style="font-weight: 700;">University of Toronto &mdash;</span>
+      <span class="color">BAS Industrial Engineering</span>
+      <div class="subtitle">
+        <i class="far fa-calendar-alt"></i> 2015 - 2020
+      </div>
+      <ul>
+        <li>PEY Co-op Program</li>
+        <li>Dean's Honour List</li>
+        <li>Minor in Artificial Intelligence</li>
+      </ul>
+    </div>
+
+    <div class="section-header color">
+      Skills:
+    </div>
+    <div class="section-content">
+      <div class="skill">Python</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Java</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">Node</div>
+      <div class="skill">React</div>
+      <div class="skill">Git</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Firebase</div>
+      <div class="skill">PyTorch</div>
+      <div class="skill">MATLAB</div>
+      <div class="skill">TensorFlow</div>
+    </div>
+
+
+    <div class="section-header color">
+      Experience:
+    </div>
+    <div class="section-content">
+      <span style="font-weight: 700;">Procter & Gamble &mdash;</span>
+      <span class="color">Software Engineer</span>
+      <div class="subtitle">
+        <i class="far fa-calendar-alt"></i> Oct/18 - May/19 &emsp; <i class="fas fa-map-marker-alt"></i> Toronto, ON
+      </div>
+      <ul>
+        <li>
+          Built an end-to-end development pipeline in Java that automatically
+          detected software changes and published to server, <b>reducing
+            deployment time by 98%</b>
+        </li>
+        <li>
+          Developed new plugins in Java for an open-source analytics software
+          (<a href="https://www.knime.com/" target="_blank">KNIME</a>) that leveraged Google and Facebook APIs to
+          automate recurring tasks, <b>saving</b> on average
+          <b>150 hours per week</b> (30 users) and <b>reducing human error rate by 20%</b>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-content">
+      <span style="font-weight: 700;">Procter & Gamble &mdash;</span>
+      <span class="color">Web & Search Analyst</span>
+      <div class="subtitle">
+        <i class="far fa-calendar-alt"></i> May/18 - Oct/18 &emsp; <i class="fas fa-map-marker-alt"></i> Toronto, ON
+      </div>
+      <ul>
+        <li>
+          Analyzed web traffic data in Google Analytics to assess performance
+          of marketing strategies and suggest improvements, eliminating
+          low-value advertising channels and <b>increasing advertisement
+            interaction by 15%</b>
+        </li>
+        <li>
+          Automated web page performance audits using JavaScript and
+          collaborated with brand teams to implement recommendations,
+          <b>increasing</b> overall <b>website traffic by 20%</b> and <b>improving Google
+            Search rankings by ~2</b>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-content">
+      <span style="font-weight: 700;">University of Toronto &mdash;</span>
+      <span class="color">Full Stack Developer</span>
+      <div class="subtitle">
+        <i class="far fa-calendar-alt"></i> Sep/17 - Dec/17 &emsp; <i class="fas fa-map-marker-alt"></i> Toronto, ON
+      </div>
+      <ul>
+        <li>
+          Developed ‘SmartyPants’ web application, a movie recommender system
+          using JavaScript, Java, HTML, and CSS that suggests a curated list
+          of films based a user’s generated profile using specific metrics and
+          a predictive algorithm
+        </li>
+        <li>
+          Created a proprietary algorithm to suggest films with a 95%
+          confidence interval
+        </li>
+        <li>
+          Conducted end-user testing and implemented results to improve
+          application
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-header color">
+      Projects:
+    </div>
+    <div class="section-content">
+      <span style="font-weight: 700;">The Federalist Papers &mdash;</span>
+      <span class="color">MATLAB</span>
+      <ul>
+        <li>
+          Developed a support vector machine (SVM)
+          in MATLAB that classified authorship of the disputed federalist papers
+          using a non-probabilistic linear classifier
+        </li>
+        <li>
+          Implemented two separate
+          algorithms to solve the classification problem with &lt; 0.2% error </li>
+        <li>
+          Consolidated and visualized results including
+          algorithm comparison, significant features, and hyperparameter optimization
+        </li>
+      </ul>
+    </div>
+    <div class="section-content">
+      <span style="font-weight: 700;">SudokuSolver &mdash;</span>
+      <span class="color">Python</span>
+      <ul>
+        <li>
+          Built a Sudoku
+          puzzle solving software in Python and published online using Google Cloud Functions as a backend
+        </li>
+        <li>
+          Represented
+          puzzles as binary programming optimization problems and solved with the help of PuLP </li>
+      </ul>
+    </div>
+    <div class="section-content">
+      <span style="font-weight: 700;">eSports Betting &mdash;</span>
+      <span class="color">Python</span>
+      <ul>
+        <li>
+          Developed a machine learning model in Python to predict the outcome of professional Counter-Strike games
+          with
+          62% accuracy on unseen games
+        </li>
+        <li>
+          Created an open-source betting assistant that combines the model prediction with
+          current commercial betting odds to suggest the recommended bet </li>
+      </ul>
+    </div>
+
+    <div class="section-header color">
+      Leadership / Volunteering:
+    </div>
+
+    <div class="flexbox section-content">
+      <div class="volunteer">
+        <div style="font-weight: 700;">HiSkule Mentorship</div>
+        Student-led initiative with the goal to encourage high school students to pursue STEM related careers by
+        providing personal guidance and support
+      </div>
+
+      <div class="volunteer">
+        <div style="font-weight: 700;">Hack the North 2018</div>
+        Attended Canada’s biggest Hackathon as a sponsor representing Procter &
+        Gamble with the goal of engaging students and assisting with recruitment
+      </div>
+
+      <div class="volunteer">
+        <div style="font-weight: 700;">Go North Youth 2019</div>
+        Hands-on activities, demonstrations and workshops designed to ignite curiosity about STEM; partnered with Google
+        and Actua
+      </div>
+
+      <div class="volunteer">
+        <div style="font-weight: 700;">Saturday Program</div>
+        Non-profit tutoring and mentorship program that helps high school
+        students from different faculties at the University of Toronto
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
