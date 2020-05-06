@@ -3,18 +3,69 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
+    <title>Azaki | WordPlay</title>
+    <meta name="description" content="WordPlay uses Natural Language Processing (NLP) to find similarities and analogies for given words">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/header.css" />
 </head>
 
 <body>
+    <div class="header">
+        <div class="profile">
+            <img src="/ProfilePicSquare.webp" />
+        </div>
+        <div>
+            <h1>Adham Zaki</h1>
+            <ul class="nav">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html#Projects">Projects</a></li>
+                <li><a href="/about/index.html">About</a></li>
+            </ul>
+            <ul class="icons">
+                <li>
+                    <a href="https://www.linkedin.com/in/adhamzaki/"><img src="/icons/linkedin.svg" /></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/azakiio/"><img src="/icons/instagram.svg" /></a>
+                </li>
+                <li>
+                    <a href="https://github.com/azakiio"><img src="/icons/github.svg" /></a>
+                </li>
+                <li>
+                    <a href="mailto:azakica@gmail.com"><img src="/icons/envelope.svg" /></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h1>WordPlay</h1>
+
+    <div class="wrapper">
+        <textarea id="input" class="numinput" placeholder="Enter a word or combination of words"></textarea>
+        <div class="buttons">
+            <button class="form_btn" type="button" onclick="solve();">
+                Solve
+            </button>
+        </div>
+
+        <div id='output'>
+        </div>
+
+        <div>
+            <p>WordPlay uses Natural Language Processing (NLP) to find word similarities and analogies</p>
+            <p>Enter a word to find semantically similar words</p>
+            <!-- Example of 1 word -->
+            <p>Enter analogies such as <b>A</b> is to <b>B</b> as <b>X</b> is to <b>??</b> in the form of in the form of A - B + X </p>
+            <!-- Example of analogies -->
+
+        </div>
 
 
-    <script src="script.js" async defer></script>
+
+
+        <script src="script.js" async defer></script>
 </body>
 
 </html>

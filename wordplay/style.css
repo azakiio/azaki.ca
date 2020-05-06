@@ -21,16 +21,6 @@
     color: hsl(0, 100%, 20%);
 }
 
-#Projects {
-    height: 100vh;
-    width: 100%;
-}
-
-canvas[resize] {
-    width: 100%;
-    height: 100vh;
-}
-
 .content {
     width: 90%;
     max-width: 700px;
@@ -78,19 +68,6 @@ h1 {
     background-color: #f44336;
 }
 
-.operations {
-    font-weight: bold;
-}
-
-.options td {
-    padding: 8px 8px 8px 0;
-}
-
-.options th {
-    text-align: left;
-    padding: 0;
-}
-
 .buttons {
     display: flex;
     justify-content: center;
@@ -105,41 +82,11 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
-
-.puzzle_out {
-    border-collapse: collapse;
-    margin: auto;
-    border: 2px solid black;
+#table {
+    margin: 0 auto;
+    text-align: left;
 }
 
-.puzzle_out td {
-    border: 1px solid #D8DCE4;
-}
-
-
-.puzzle_out input {
-    width: 100%;
-    border: none;
-    text-align: center;
-    font-size: 30px;
-}
-
-.puzzle_out input:focus {
-    outline: none;
-}
-
-.puzzle_out .bb {
-    border-bottom: 2px solid #D8DCE4;
-}
-
-.puzzle_out .br {
-    border-right: 2px solid #D8DCE4;
-}
-
-/* dollargame */
-#game {
-    text-align: center;
-    width: 700px;
-    height: 700px;
-    position: relative;
+#table td,th {
+    padding: 0 10px;
 }

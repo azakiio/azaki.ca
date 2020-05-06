@@ -112,8 +112,8 @@ Ball.prototype = {
 
 var balls = [];
 var texts = [];
-var names = ["Calc\nSolver", "Sudoku\nSolver", "Dollar\nGame", "Flappy\nBird", "CS:GO\nPredictor"];
-var links = ["/calcsolver/", "/sudokusolver/", "/dollargame/", "/flappybird/", "/csgomodel/"];
+var names = ["Calc\nSolver", "Sudoku\nSolver", "Dollar\nGame", "Flappy\nBird", "CS:GO\nPredictor", "WordPlay"];
+var links = ["/calcsolver/", "/sudokusolver/", "/dollargame/", "/flappybird/", "/csgomodel/", "/wordplay/"];
 
 var numBalls = 5;
 for (var i = 0; i < numBalls; i++) {
