@@ -115,7 +115,7 @@ var texts = [];
 var names = ["Calc\nSolver", "Sudoku\nSolver", "Dollar\nGame", "Flappy\nBird", "CS:GO\nPredictor", "WordPlay"];
 var links = ["/calcsolver/", "/sudokusolver/", "/dollargame/", "/flappybird/", "/csgomodel/", "/wordplay/"];
 
-var numBalls = 5;
+var numBalls = names.length;
 for (var i = 0; i < numBalls; i++) {
 	factor = Math.min(Math.max(view.size._width, view.size._height) / 15, 60)
 	var radius = Math.random() * factor + factor;
