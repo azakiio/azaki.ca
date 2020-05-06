@@ -1,7 +1,7 @@
 var glove;
 
 async function getEmbeddings() {
-  let response = await fetch("https://drive.google.com/u/0/uc?export=download&confirm=h1ql&id=1DqIy-f1FKIJxv66V-dgC2LJAKFYtGS6g");
+  let response = await fetch("/wordplay/embeddings.txt");
   let data = await response.text();
   var dict = {};
   var splitline;
