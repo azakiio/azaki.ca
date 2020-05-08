@@ -1,92 +1,121 @@
 .wrapper {
-    width: 90%;
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 24px;
-    flex: 1 0;
+  width: 90%;
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 24px;
+  flex: 1 0;
 }
 
 .wrapper p {
-    margin: 15px 0;
-    line-height: 1.6;
+  margin: 15px 0;
+  line-height: 1.6;
 }
 
 .wrapper a {
-    color: hsl(0, 100%, 33%);
-    text-decoration: none;
-    transition: color 200ms;
+  color: hsl(0, 100%, 33%);
+  text-decoration: none;
+  transition: color 200ms;
 }
 
 .wrapper a:hover {
-    color: hsl(0, 100%, 20%);
+  color: hsl(0, 100%, 20%);
 }
 
 .content {
-    width: 90%;
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 20px;
-    flex: 1 0;
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 20px;
+  flex: 1 0;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .content p {
-    margin: 10px 0;
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
 }
 
 .numinput {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    resize: vertical;
-    margin-top: 10px;
-    outline: none;
-    overflow-y: hidden;
-    font: inherit;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  margin-top: 10px;
+  outline: none;
+  overflow-y: hidden;
+  font: inherit;
 }
 
 .form_btn {
-    display: inline-block;
-    padding: 0.3em 1.2em;
-    margin: 0.3em;
-    border-radius: 2em;
-    border: none;
-    font: inherit;
-    background-color: #4CAF50;
-    text-align: center;
-    transition: all 0.2s;
-    outline: none;
-    color: white;
-    cursor: pointer;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0.3em;
+  border-radius: 2em;
+  border: none;
+  font: inherit;
+  background-color: #4caf50;
+  text-align: center;
+  transition: all 0.2s;
+  outline: none;
+  color: white;
+  cursor: pointer;
 }
 
 .red_btn {
-    background-color: #f44336;
+  background-color: #f44336;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1em auto;
 }
 
-
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+.progress {
+  margin: 1em auto;
+  width: fit-content;
 }
 
-#table {
-    margin: 0 auto;
-    text-align: left;
+progress {
+  -webkit-appearance: none;
 }
 
-#table td,th {
-    padding: 0 10px;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+ol {
+    list-style-position: inside;
 }

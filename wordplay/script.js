@@ -2,7 +2,33 @@ var glove;
 
 async function getEmbeddings() {
   let response = await fetch("/wordplay/embeddings.txt");
-  let data = await response.text();
+  const reader = response.body.getReader();
+
+  const contentLength = +response.headers.get('Content-Length')
+
+  let receivedLength = 0
+  let chunks = []
+  var progress = document.getElementById('request')
+  while (true) {
+    const { done, value } = await reader.read();
+
+    if (done) {
+      break;
+    }
+    chunks.push(value)
+    receivedLength += value.length
+
+    progress.value = receivedLength/contentLength
+  }
+  
+  let chunksAll = new Uint8Array(receivedLength);
+  let position = 0
+  for(let chunk of chunks) {
+    chunksAll.set(chunk,position);
+    position += chunk.length;
+  }
+
+  let data = new TextDecoder('utf-8').decode(chunksAll);
   var dict = {};
   var splitline;
   var word;
@@ -16,21 +42,35 @@ async function getEmbeddings() {
   }
   loaded();
   glove = dict;
-  return dict
 }
 
-getEmbeddings()
+getEmbeddings();
 
 function loaded() {
-  console.log("button is ready");
-  //make button ready
+  document.getElementById("progress").classList.add("hidden")
+  var buttons = document.getElementById("buttons")
+  buttons.classList.add("buttons")
+  buttons.classList.remove("hidden")
 }
 
 function solve() {
-  input = document.getElementById('input').value;
+  input = document.getElementById("input").value;
+  var output = document.getElementById("output");
+  output.innerHTML = ''
+  var invalid_flag = false;
   var inputs = input.split(/(\+|-)/).map(function (item) {
-    return item.trim();
+    var temp_item = item.trim().toLowerCase();
+    if(!glove[temp_item]){
+      invalid_flag = true;
+      output.innerHTML += `Invalid Word: ${temp_item}\n`
+    } else {
+      return temp_item
+    }
   });
+
+  if(invalid_flag){
+    return
+  }
 
   var final = glove[inputs[0]];
   for (let i = 1; i < inputs.length - 1; i += 2) {
@@ -41,32 +81,30 @@ function solve() {
     }
   }
 
-  var output = document.getElementById('output')
-  var table = ``
-  table = `<table id='table'>
+  var output = document.getElementById("output");
+  var table = ``;
+  table = `<table class="table">
   <tr>
     <th>Rank</th>
     <th>Word</th>
     <th>Similarity</th>
-  </tr>`
-  
-  if (inputs.length > 1)
-    var results = closestWord(final, false, true)
-  else
-    var results = closestWord(final, true, true)
-  
-  var i = 1
-  for(var row of results) {
+  </tr>`;
+
+  if (inputs.length > 1) var results = closestWord(final, false, true);
+  else var results = closestWord(final, true, true);
+
+  var i = 1;
+  for (var row of results) {
     table += `
     <tr>
       <td>${i++}</td>
       <td>${row[0]}</td>
-      <td>${(row[1]*100).toFixed(2)}%</td>
-    </tr>`
+      <td>${(row[1] * 100).toFixed(2)}%</td>
+    </tr>`;
   }
-  table += `</table>`
+  table += `</table>`;
 
-  output.innerHTML = table
+  output.innerHTML = table;
 }
 
 function sim(A, B) {
@@ -81,7 +119,8 @@ function sim(A, B) {
   mA = Math.sqrt(mA);
   mB = Math.sqrt(mB);
   var similarity = dotproduct / (mA * mB);
-  return 1 - Math.acos(similarity) / Math.PI;
+  return similarity
+  // return 1 - Math.acos(similarity) / Math.PI;
 }
 
 function dist(A, B) {
@@ -101,7 +140,6 @@ function closestWord(vec, skip_first = true, cosine = true) {
     } else {
       values[key] = dist(vec, glove[key]);
     }
-    
   }
 
   var items = Object.keys(glove).map(function (key) {
@@ -116,12 +154,11 @@ function closestWord(vec, skip_first = true, cosine = true) {
     }
   });
 
-  if(skip_first) {
+  if (skip_first) {
     return items.slice(1, 11);
   } else {
-    return items.slice(0,10)
+    return items.slice(0, 10);
   }
-  
 }
 
 function addArr(A, B) {

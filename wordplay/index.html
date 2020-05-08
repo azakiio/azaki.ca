@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Azaki | WordPlay</title>
-    <meta name="description" content="WordPlay uses Natural Language Processing (NLP) to find similarities and analogies for given words">
+    <meta name="description"
+        content="WordPlay uses Natural Language Processing (NLP) to find similarities and analogies for given words">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="style.css" />
@@ -43,8 +44,14 @@
     <h1>WordPlay</h1>
 
     <div class="wrapper">
-        <textarea id="input" class="numinput" placeholder="Enter a word or combination of words"></textarea>
-        <div class="buttons">
+        <input id="input" class="numinput" placeholder="Enter a word or combination of words"></input>
+
+        <div id="progress" class="progress">
+            <label for="request">Loading Model: </label>
+            <progress id="request"></progress>
+        </div>
+
+        <div id="buttons" class="hidden">
             <button class="form_btn" type="button" onclick="solve();">
                 Solve
             </button>
@@ -54,14 +61,13 @@
         </div>
 
         <div>
-            <p>WordPlay uses Natural Language Processing (NLP) to find word similarities and analogies</p>
-            <p>Enter a word to find semantically similar words</p>
-            <!-- Example of 1 word -->
-            <p>Enter analogies such as <b>A</b> is to <b>B</b> as <b>X</b> is to <b>??</b> in the form of in the form of A - B + X </p>
-            <!-- Example of analogies -->
+            <p>WordPlay uses Natural Language Processing (NLP) to find semantically similar words to the input</p>
+            <p>For example, <b>cat</b> would return: dog, rabbit, monkey, rat, etc.</p>
+            <p>WordPlay can also solve analogies using linear combinations of words</p>
+            <p>Enter <b>A - B + X</b> to solve analogies of the form <b>B</b> is to <b>A</b> as <b>X</b> is to <b>??</b></p>
+            <p>For example, <b>paris - france + germany</b> should return <b>berlin</b> <br> (<b>France</b> is to <b>Paris</b> as <b>Germany</b> is to <b>Berlin</b>)</p>
 
         </div>
-
 
 
 
