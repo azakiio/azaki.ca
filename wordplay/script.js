@@ -2,6 +2,7 @@ var glove;
 
 async function getEmbeddings() {
   let response = await fetch("/wordplay/embeddings.txt");
+  console.log(response)
   const reader = response.body.getReader();
 
   const contentLength = +response.headers.get('Content-Length')
@@ -18,8 +19,8 @@ async function getEmbeddings() {
 
     chunks.push(value)
     receivedLength += value.length
-    if(!Number.isNaN(receivedLength/contentLength))
-      progress.value = receivedLength/contentLength
+    console.log(receivedLength/contentLength)
+    progress.value = receivedLength/contentLength
   }
   
   let chunksAll = new Uint8Array(receivedLength);
