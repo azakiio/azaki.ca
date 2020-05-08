@@ -4,7 +4,7 @@ async function getEmbeddings() {
   let response = await fetch("/wordplay/embeddings.txt");
   const reader = response.body.getReader();
 
-  const contentLength = await +response.headers.get('Content-Length')
+  const contentLength = +response.headers.get('Content-Length')
 
   let receivedLength = 0
   let chunks = []
@@ -18,7 +18,8 @@ async function getEmbeddings() {
 
     chunks.push(value)
     receivedLength += value.length
-    progress.value = receivedLength/contentLength
+    if(!Number.isNaN(receivedLength/contentLength))
+      progress.value = receivedLength/contentLength
   }
   
   let chunksAll = new Uint8Array(receivedLength);
