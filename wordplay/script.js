@@ -2,36 +2,7 @@ var glove;
 
 async function getEmbeddings() {
   let response = await fetch("/wordplay/embeddings.txt");
-  console.log(response)
-  const reader = response.body.getReader();
-
-  const contentLength = +response.headers.get('Content-Length')
-
-  let receivedLength = 0
-  let chunks = []
-  var progress = document.getElementById('request')
-  while (true) {
-    const { done, value } = await reader.read();
-
-    if (done) {
-      break;
-    }
-
-    chunks.push(value)
-    receivedLength += value.length
-    console.log(receivedLength)
-    console.log(contentLength)
-    progress.value = receivedLength/contentLength
-  }
-  
-  let chunksAll = new Uint8Array(receivedLength);
-  let position = 0
-  for(let chunk of chunks) {
-    chunksAll.set(chunk,position);
-    position += chunk.length;
-  }
-
-  let data = new TextDecoder('utf-8').decode(chunksAll);
+  let data = await response.text()
   var dict = {};
   var splitline;
   var word;
