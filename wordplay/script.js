@@ -23,7 +23,7 @@ async function getEmbeddings() {
     if (contentLength != 0) {
       progress.value = (receivedLength/contentLength)/2
     } else {
-      progress.value = (i/4000)/2
+      progress.value = (i/2000)/2
     }
     // 
   }
