@@ -2,13 +2,12 @@ var glove;
 var progress = document.getElementById("model")
 
 async function getEmbeddings() {
-  const response = await fetch('glove.txt');
+  const response = await fetch('embeddings.zip');
   const reader = response.body.getReader();
   const contentLength = +response.headers.get('Content-Length');
-
-  // Step 3: read the data
-  let receivedLength = 0; // received that many bytes at the moment
-  let chunks = []; // array of received binary chunks (comprises the body)
+  console.log(contentLength)
+  let receivedLength = 0;
+  let chunks = [];
   var i = 0
   while (true) {
     i++
@@ -23,26 +22,15 @@ async function getEmbeddings() {
     if (contentLength != 0) {
       progress.value = (receivedLength/contentLength)/2
     } else {
-      progress.value = (i/2000)/2
+      progress.value = (i/8000)
     }
-    // 
-  }
-  let chunksAll = new Uint8Array(receivedLength); // (4.1)
-  let position = 0;
-  for (let chunk of chunks) {
-    chunksAll.set(chunk, position); // (4.2)
-    position += chunk.length;
-  }
 
-  // Step 5: decode into a string
-  let text = new TextDecoder("utf-8").decode(chunksAll);
-  // var blob = new Blob(chunks);
-  // const content = blob
-  // const zip = await JSZip.loadAsync(content);
+  }
+  var blob = new Blob(chunks);
+  const zip = await JSZip.loadAsync(blob);
   progress.value = 0.75
-  // const text = await zip.file("embeddings.txt").async("string");
+  const text = await zip.file("embeddings.txt").async("string");
   progress.value = 0.9
-  // var text = await blob.text();
   var dict = {};
   var splitline;
   var word;
