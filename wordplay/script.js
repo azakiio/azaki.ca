@@ -11,6 +11,7 @@ async function getEmbeddings() {
   let chunks = []; // array of received binary chunks (comprises the body)
   var i = 0
   while (true) {
+    i++
     const { done, value } = await reader.read();
 
     if (done) {
