@@ -19,7 +19,7 @@ async function getEmbeddings() {
     chunks.push(value);
     receivedLength += value.length;
 
-    progress.value = (receivedLength/contentLength)/2
+    // progress.value = (receivedLength/contentLength)/2
   }
   let blob = new Blob(chunks);
   const content = blob
