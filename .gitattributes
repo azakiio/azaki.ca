@@ -1,1 +1,2 @@
 wordplay/glove.txt filter=lfs diff=lfs merge=lfs -text
+wordplay/embeddings.zip filter=lfs diff=lfs merge=lfs -text
