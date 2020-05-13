@@ -4,8 +4,8 @@ var progress = document.getElementById("model")
 async function getEmbeddings() {
   const response = await fetch('embeddings.zip');
   const reader = response.body.getReader();
-  const contentLength = +response.headers.get('Content-Length');
-  console.log(contentLength)
+  var contentLength = Math.max(+response.headers.get('Content-Length'), 69922077)
+  
   let receivedLength = 0;
   let chunks = [];
   var i = 0
@@ -19,11 +19,7 @@ async function getEmbeddings() {
 
     chunks.push(value);
     receivedLength += value.length;
-    if (contentLength != 0) {
-      progress.value = (receivedLength/contentLength)/2
-    } else {
-      progress.value = (i/8000)
-    }
+    progress.value = (receivedLength/contentLength)/2
 
   }
   var blob = new Blob(chunks);
