@@ -2,7 +2,7 @@ var glove;
 var progress = document.getElementById("model")
 
 async function getEmbeddings() {
-  const response = await fetch('embeddings.zip');
+  const response = await fetch('embeddings.txt');
   const reader = response.body.getReader();
   const contentLength = +response.headers.get('Content-Length');
 
@@ -19,14 +19,15 @@ async function getEmbeddings() {
     chunks.push(value);
     receivedLength += value.length;
 
-    // progress.value = (receivedLength/contentLength)/2
+    progress.value = (receivedLength/contentLength)/2
   }
-  let blob = new Blob(chunks);
-  const content = blob
-  const zip = await JSZip.loadAsync(content);
+  var blob = new Blob(chunks);
+  // const content = blob
+  // const zip = await JSZip.loadAsync(content);
   progress.value = 0.75
-  const text = await zip.file("embeddings.txt").async("string");
+  // const text = await zip.file("embeddings.txt").async("string");
   progress.value = 0.9
+  var text = await blob.text();
   var dict = {};
   var splitline;
   var word;
