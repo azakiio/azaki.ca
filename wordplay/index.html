@@ -7,7 +7,7 @@
     <meta name="description"
         content="WordPlay uses Natural Language Processing (NLP) to find similarities and analogies for given words">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" href="/favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/header.css" />
 </head>
@@ -46,7 +46,10 @@
     <div class="wrapper">
         <input id="input" class="numinput" placeholder="Word or word combination..."></input>
 
-        <div id="progress" class="loader"></div>
+        <div id="progress" class="loader">
+            <label for="model">Loading Model:</label>
+            <progress id="model"></progress>
+        </div>
 
         <div id="buttons" class="hidden">
             <button class="form_btn" type="button" onclick="solve();">
@@ -61,13 +64,15 @@
             <p>WordPlay uses Natural Language Processing (NLP) to find semantically similar words to the input</p>
             <p>For example, <b>cat</b> would return: dog, rabbit, monkey, rat, etc.</p>
             <p>WordPlay can also solve analogies using linear combinations of words</p>
-            <p>Enter <b>A - B + X</b> to solve analogies of the form <b>B</b> is to <b>A</b> as <b>X</b> is to <b>??</b></p>
-            <p>For example, <b>paris - france + germany</b> should return <b>berlin</b> <br> (<b>France</b> is to <b>Paris</b> as <b>Germany</b> is to <b>Berlin</b>)</p>
+            <p>Enter <b>A - B + X</b> to solve analogies of the form <b>B</b> is to <b>A</b> as <b>X</b> is to <b>??</b>
+            </p>
+            <p>For example, <b>paris - france + germany</b> should return <b>berlin</b> <br> (<b>France</b> is to
+                <b>Paris</b> as <b>Germany</b> is to <b>Berlin</b>)</p>
 
         </div>
 
 
-
+        <script src="jszip.min.js"></script>
         <script src="script.js"></script>
 </body>
 

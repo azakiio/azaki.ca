@@ -1,19 +1,44 @@
 var glove;
+var progress = document.getElementById("model")
 
 async function getEmbeddings() {
-  let response = await fetch("/wordplay/embeddings.txt");
-  let data = await response.text()
+  const response = await fetch('embeddings.zip');
+  const reader = response.body.getReader();
+  const contentLength = +response.headers.get('Content-Length');
+
+  // Step 3: read the data
+  let receivedLength = 0; // received that many bytes at the moment
+  let chunks = []; // array of received binary chunks (comprises the body)
+  while (true) {
+    const { done, value } = await reader.read();
+
+    if (done) {
+      break;
+    }
+
+    chunks.push(value);
+    receivedLength += value.length;
+
+    progress.value = (receivedLength/contentLength)/2
+  }
+  let blob = new Blob(chunks);
+  const content = blob
+  const zip = await JSZip.loadAsync(content);
+  progress.value = 0.75
+  const text = await zip.file("embeddings.txt").async("string");
+  progress.value = 0.9
   var dict = {};
   var splitline;
   var word;
   var embedding;
-  var lines = data.split(/\r?\n/);
+  var lines = text.split(/\r?\n/);
   for (var line of lines) {
     splitline = line.split(" ");
     word = splitline[0];
     embedding = splitline.slice(1).map(Number);
     dict[word] = embedding;
   }
+  progress.value = 1.0
   loaded();
   glove = dict;
 }
@@ -34,7 +59,7 @@ function solve() {
   var invalid_flag = false;
   var inputs = input.split(/(\+|-)/).map(function (item) {
     var temp_item = item.trim().toLowerCase();
-    if(!glove[temp_item]){
+    if (!glove[temp_item]) {
       invalid_flag = true;
       output.innerHTML += `Invalid Word: ${temp_item}\n`
     } else {
@@ -42,7 +67,7 @@ function solve() {
     }
   });
 
-  if(invalid_flag){
+  if (invalid_flag) {
     return
   }
 
