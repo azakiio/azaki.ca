@@ -122,6 +122,10 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 20px auto;
 }
 
+.red {
+  color: red
+}
+
 
 
 /* .loader {

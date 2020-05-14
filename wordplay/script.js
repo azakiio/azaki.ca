@@ -1,16 +1,19 @@
 var glove;
-var progress = document.getElementById("model")
+var progress = document.getElementById("model");
 
 async function getEmbeddings() {
-  const response = await fetch('embeddings.zip');
+  const response = await fetch("embeddings.zip");
   const reader = response.body.getReader();
-  var contentLength = Math.max(+response.headers.get('Content-Length'), 69922077)
-  
+  var contentLength = Math.max(
+    +response.headers.get("Content-Length"),
+    69922077
+  );
+
   let receivedLength = 0;
   let chunks = [];
-  var i = 0
+  var i = 0;
   while (true) {
-    i++
+    i++;
     const { done, value } = await reader.read();
 
     if (done) {
@@ -19,14 +22,15 @@ async function getEmbeddings() {
 
     chunks.push(value);
     receivedLength += value.length;
-    progress.value = (receivedLength/contentLength)/2
-
+    progress.value = receivedLength / contentLength / 2;
   }
   var blob = new Blob(chunks);
   const zip = await JSZip.loadAsync(blob);
-  progress.value = 0.75
-  const text = await zip.file("embeddings.txt").async("string");
-  progress.value = 0.9
+  const text = await zip
+    .file("embeddings.txt")
+    .async("string", function updateCallback(metadata) {
+      progress.value = 0.5 + metadata.percent / 200
+    });
   var dict = {};
   var splitline;
   var word;
@@ -38,7 +42,6 @@ async function getEmbeddings() {
     embedding = splitline.slice(1).map(Number);
     dict[word] = embedding;
   }
-  progress.value = 1.0
   loaded();
   glove = dict;
 }
@@ -46,29 +49,37 @@ async function getEmbeddings() {
 getEmbeddings();
 
 function loaded() {
-  document.getElementById("progress").classList.add("hidden")
-  var buttons = document.getElementById("buttons")
-  buttons.classList.add("buttons")
-  buttons.classList.remove("hidden")
+  document.getElementById("progress").classList.add("hidden");
+  var buttons = document.getElementById("buttons");
+  buttons.classList.add("buttons");
+  buttons.classList.remove("hidden");
+
+  var input = document.getElementById("input");
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      solve();
+    }
+  });
 }
 
 function solve() {
   input = document.getElementById("input").value;
   var output = document.getElementById("output");
-  output.innerHTML = ''
+  output.innerHTML = "";
   var invalid_flag = false;
-  var inputs = input.split(/(\+|-)/).map(function (item) {
+  var inputs = input.split(/ (\+|-) /).map(function (item) {
     var temp_item = item.trim().toLowerCase();
     if (!glove[temp_item]) {
       invalid_flag = true;
-      output.innerHTML += `Invalid Word: ${temp_item}\n`
+      output.innerHTML += `<p class="red">Invalid Word: ${temp_item}</p>`;
     } else {
-      return temp_item
+      return temp_item;
     }
   });
 
   if (invalid_flag) {
-    return
+    return;
   }
 
   var final = glove[inputs[0]];
@@ -89,11 +100,12 @@ function solve() {
     <th>Similarity</th>
   </tr>`;
 
-  if (inputs.length > 1) var results = closestWord(final, false, true);
-  else var results = closestWord(final, true, true);
+  var results = closestWord(final, true);
 
   var i = 1;
   for (var row of results) {
+    if (i > 10) break;
+    if (inputs.includes(row[0])) continue;
     table += `
     <tr>
       <td>${i++}</td>
@@ -118,7 +130,7 @@ function sim(A, B) {
   mA = Math.sqrt(mA);
   mB = Math.sqrt(mB);
   var similarity = dotproduct / (mA * mB);
-  return similarity
+  return similarity;
   // return 1 - Math.acos(similarity) / Math.PI;
 }
 
@@ -131,7 +143,7 @@ function dist(A, B) {
   return Math.sqrt(sum);
 }
 
-function closestWord(vec, skip_first = true, cosine = true) {
+function closestWord(vec, cosine = true) {
   values = {};
   for (var key of Object.keys(glove)) {
     if (cosine) {
@@ -153,11 +165,7 @@ function closestWord(vec, skip_first = true, cosine = true) {
     }
   });
 
-  if (skip_first) {
-    return items.slice(1, 11);
-  } else {
-    return items.slice(0, 10);
-  }
+  return items.slice(0, 20);
 }
 
 function addArr(A, B) {
