@@ -2,11 +2,12 @@ var glove;
 var progress = document.getElementById("model");
 
 async function getEmbeddings() {
-  const response = await fetch("embeddings.zip");
+  const response = await fetch("vectors.zip");
   const reader = response.body.getReader();
+  // console.log(+response.headers.get("Content-Length"))
   var contentLength = Math.max(
     +response.headers.get("Content-Length"),
-    69922077
+    34870246
   );
 
   let receivedLength = 0;

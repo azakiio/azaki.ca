@@ -56,4 +56,4 @@ Hack the North 2018
 - Attended Canada’s biggest Hackathon as a sponsor representing Procter & Gamble with the goal of engaging students and assisting with recruitment
 
 Saturday Program
-- Non-profit tutoring and mentorship program that helps high school students from different faculties at the University of Toronto
+- Non-profit tutoring and mentorship program that helps high school students in Toronto by pairing them with university students from different faculties at the University of Toronto.
