@@ -7,12 +7,12 @@ html {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   display: block;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 * {
