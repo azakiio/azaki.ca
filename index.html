@@ -5,52 +5,37 @@
   <title>Azaki | Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.png"/>
-  <link rel="stylesheet" href="header.css">
+  <link rel="icon" href="/favicon.png" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <script src="anime.min.js"></script>
   <script src="paper-full.min.js"></script>
   <script type="text/paperscript" src="navigation.js" canvas="Projects"></script>
 </head>
 
 <body>
-
-  <div class="header">
-    <div class="profile">
-      <img src="/ProfilePicSquare.webp" />
-    </div>
-    <div>
-      <h1>Adham Zaki</h1>
-      <ul class="nav">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/index.html#Projects">Projects</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-      <ul class="icons">
-        <li>
-          <a href="https://www.linkedin.com/in/adhamzaki/"><img src="/icons/linkedin.svg" /></a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/azakiio/"><img src="/icons/instagram.svg" /></a>
-        </li>
-        <li>
-          <a href="https://github.com/azakiio"><img src="/icons/github.svg" /></a>
-        </li>
-        <li>
-          <a href="mailto:azakica@gmail.com"><img src="/icons/envelope.svg" /></a>
-        </li>
-      </ul>
-    </div>
+  <h1>Hi, I'm Adham Zaki!</h1>
+  <div class="icons">
+    <a href="https://www.linkedin.com/in/adhamzaki/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin linkedin"></i></a>
+    <a href="https://www.instagram.com/azakiio/" title="Instagram" target="_blank"><i class="fab fa-instagram instagram"></i></a>
+    <a href="https://github.com/azakiio" title="Github" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:azakica@gmail.com" title="Email"><i class="fas fa-envelope email"></i></a>
+    <a href="/resume" title="Resume"><i class="fas fa-user-tie tie"></i></a>
   </div>
 
-
-
   <div class="wrapper">
-    <h2>Hi, I'm Adham Zaki!</h2>
 
-    <p>I graduated from the University of Toronto with a degree in Industrial Engineering and a minor in Artificial Intelligence.
-      I'm passionate about web development, machine learning, and teaching.</p>
+    <div class="section-header">
+      About me
+    </div>
+    <img src="ProfilePicSquare.jpg" alt="Profile Picture" class="about-me-img">
 
-    <p>This website is mostly just a place for me to dump my thoughts and share neat side-projects I work on in my free time.</p>
+    <p>I recently graduated from the University of Toronto with a degree in Industrial Engineering and a minor in
+      Artificial Intelligence. I'm passionate about web development, machine learning, and teaching. <a
+        href="/about">(More about me here)</a></p>
+
+    <p>This website is mostly just a place for me to share my thoughts and a few fun side-projects I work on in my free
+      time.</p>
 
   </div>
 
@@ -59,6 +44,38 @@
   </div>
 
 
+  <script>
+    anime({
+      targets: 'i',
+      translateX: ['75vw', 0],
+      delay: anime.stagger(300, {start: 750, easing: 'easeOutSine'}),
+      easing: 'easeOutBack',
+      duration: 750, 
+      complete: function (anim) {
+        var icons  = document.querySelectorAll('.icons i')
+        icons.forEach(function(icon) {
+          icon.addEventListener('mouseover', function() {
+            bounce(this)
+          })
+        })
+      }
+    })
+
+    function bounce(el) {
+      anime({
+        targets: el,
+        keyframes: [
+          { scaleX: 0.75, scaleY: 1.25, duration: 270 },
+          { scaleX: 1.25, scaleY: 0.75, duration: 90 },
+          { scaleX: 0.85, scaleY: 1.15, duration: 90 },
+          { scaleX: 1.05, scaleY: 0.95, duration: 135 },
+          { scaleX: 0.95, scaleY: 1.05, duration: 90 },
+          { scaleX: 1, scaleY: 1, duration: 225 },
+        ],
+        easing: 'easeInOutBounce'
+      });
+    }
+  </script>
 
 </body>
 
