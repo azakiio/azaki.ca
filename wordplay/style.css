@@ -1,14 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: block;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+.header {
+  margin-top: 50px;
+  text-align: center;
+}
+
 .wrapper {
   width: 90%;
   max-width: 750px;
   margin: 0 auto;
-  font-size: 24px;
+  font-size: 22px;
   flex: 1 0;
 }
 
 .wrapper p {
   margin: 15px 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .wrapper a {
@@ -27,10 +55,6 @@
   margin: 0 auto;
   font-size: 20px;
   flex: 1 0;
-}
-
-h1 {
-  text-align: center;
 }
 
 .content p {
@@ -126,19 +150,54 @@ input[type="number"]::-webkit-outer-spin-button {
   color: red
 }
 
-
-
-/* .loader {
-  margin: 20px auto;
-  border: 12px solid #f3f3f3;
-  border-top: 12px solid #4caf50;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  animation: spin 2s linear infinite;
+.breweries {
+  padding: 2rem;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-} */
+.breweries > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
+
+.breweries > ul > li {
+  border: 1px solid #E2E2E2;
+  border-radius: .5rem;
+}
+
+.breweries > ul > li > figure {
+  max-height: 220px;
+  overflow: hidden;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  position: relative;
+}
+
+.breweries > ul > li > figure > img {
+  width: 100%;
+}
+
+.breweries > ul > li > figure > figcaption {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,.7);
+  width: 100%;
+}
+
+.breweries > ul > li > figure > figcaption > h3 {
+  color: white;
+  padding: .75rem;
+  font-size: 1.25rem;
+}
+
+.breweries > ul > li > p {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 1rem .75rem;
+  color: #666666;
+}
+
+.breweries > ul > li > a {
+  padding: .5rem 1rem;
+  margin: .5rem;
+}

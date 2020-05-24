@@ -110,6 +110,38 @@ h1 {
 }
 
 .email {
-  color: #FED36C;
+  color: #fed36c;
 }
 
+.breweries {
+  padding: 2rem;
+}
+
+.breweries > ul {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+.breweries > ul > li {
+  border: 1px solid #e2e2e2;
+  border-radius: 0.5rem;
+}
+
+.breweries h2 {
+  text-align: center;
+}
+
+.breweries p {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 1rem 0.75rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* .breweries > ul > li > a {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+} */

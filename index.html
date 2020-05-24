@@ -16,8 +16,10 @@
 <body>
   <h1>Hi, I'm Adham Zaki!</h1>
   <div class="icons">
-    <a href="https://www.linkedin.com/in/adhamzaki/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin linkedin"></i></a>
-    <a href="https://www.instagram.com/azakiio/" title="Instagram" target="_blank"><i class="fab fa-instagram instagram"></i></a>
+    <a href="https://www.linkedin.com/in/adhamzaki/" title="LinkedIn" target="_blank"><i
+        class="fab fa-linkedin linkedin"></i></a>
+    <a href="https://www.instagram.com/azakiio/" title="Instagram" target="_blank"><i
+        class="fab fa-instagram instagram"></i></a>
     <a href="https://github.com/azakiio" title="Github" target="_blank"><i class="fab fa-github"></i></a>
     <a href="mailto:azakica@gmail.com" title="Email"><i class="fas fa-envelope email"></i></a>
     <a href="/resume" title="Resume"><i class="fas fa-user-tie tie"></i></a>
@@ -31,30 +33,76 @@
     <img src="ProfilePicSquare.jpg" alt="Profile Picture" class="about-me-img">
 
     <p>I recently graduated from the University of Toronto with a degree in Industrial Engineering and a minor in
-      Artificial Intelligence. I'm passionate about web development, machine learning, and teaching. <a
-        href="/about">(More about me here)</a></p>
+      Artificial Intelligence.<br>I'm passionate about web development, machine learning, and teaching. <a
+        href="/about">(More&nbsp;about&nbsp;me&nbsp;here)</a></p>
 
     <p>This website is mostly just a place for me to share my thoughts and a few fun side-projects I work on in my free
       time.</p>
 
+
+    <div class="section-header">
+      Projects
+    </div>
+    <section class="breweries">
+      <ul>
+        <li>
+          <a href="/wordplay/">
+            <h2>WordPlay</h2>
+            <p>WordPlay uses Natural Language Processing (NLP) to find semantically similar words to the input.</p>
+          </a>
+        </li>
+        <li>
+          <a href="/sudokusolver/">
+            <h2>SudokuSolver</h2>
+            <p>Sudoku puzzle solver using Integer Programming PuLP</p>
+          </a>
+        </li>
+        <li>
+          <a href="/flappybird/">
+            <h2>FlappyBird</h2>
+            <p>Recreation of the famous Flappy Bird game in pure JavaScript</p>
+          </a>
+        </li>
+        <li>
+          <a href="/calcsolver/">
+            <h2>CalcSolver</h2>
+            <p>Solver to display all possible ways of going from a starting number to a goal number with user provided operations</p>
+          </a>
+        </li>
+        <li>
+          <a href="/csgomodel/">
+            <h2>CS:GO Predictor</h2>
+            <p>A Machine Learning model that provides betting advice for upcoming professional CS:GO matches</p>
+          </a>
+        </li>
+        <li>
+          <a href="/dollargame/">
+            <h2>Dollar Game</h2>
+            <p>A Graph based puzzle game</p>
+          </a>
+        </li>
+      </ul>
+    </section>
   </div>
 
-  <div class="canvas">
+
+
+  <!-- <div class="canvas">
     <canvas id="Projects" resize></canvas>
-  </div>
+  </div> -->
 
 
   <script>
     anime({
       targets: 'i',
       translateX: ['100vw', 0],
-      delay: anime.stagger(300, {start: 750, easing: 'easeOutSine'}),
+      delay: anime.stagger(300, { start: 750, easing: 'easeOutSine' }),
       easing: 'easeOutBack',
-      duration: 750, 
+      duration: 750,
       complete: function (anim) {
-        var icons  = document.querySelectorAll('.icons i')
-        icons.forEach(function(icon) {
-          icon.addEventListener('mouseover', function() {
+        var icons = document.querySelectorAll('.icons i')
+        icons.forEach(function (icon) {
+          icon.addEventListener('mouseover', function () {
             bounce(this)
           })
         })

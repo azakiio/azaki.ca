@@ -8,40 +8,15 @@
         content="WordPlay uses Natural Language Processing (NLP) to find similarities and analogies for given words">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="/header.css" />
 </head>
 
 <body>
     <div class="header">
-        <div class="profile">
-            <img src="/ProfilePicSquare.webp" />
-        </div>
-        <div>
-            <h1>Adham Zaki</h1>
-            <ul class="nav">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/index.html#Projects">Projects</a></li>
-                <li><a href="/about/index.html">About</a></li>
-            </ul>
-            <ul class="icons">
-                <li>
-                    <a href="https://www.linkedin.com/in/adhamzaki/"><img src="/icons/linkedin.svg" /></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/azakiio/"><img src="/icons/instagram.svg" /></a>
-                </li>
-                <li>
-                    <a href="https://github.com/azakiio"><img src="/icons/github.svg" /></a>
-                </li>
-                <li>
-                    <a href="mailto:azakica@gmail.com"><img src="/icons/envelope.svg" /></a>
-                </li>
-            </ul>
-        </div>
+        <h1><a href="/"><i class="fas fa-home"></i></a></h1>
+        <h1>WordPlay</h1>
     </div>
-
-    <h1>WordPlay</h1>
 
     <div class="wrapper">
         <input id="input" class="numinput" placeholder="Word or word combination..."></input>
@@ -61,13 +36,15 @@
         </div>
 
         <div>
-            <p>WordPlay uses Natural Language Processing (NLP) to find semantically similar words to the input</p>
-            <p>For example, <b>cat</b> would return: dog, rabbit, monkey, rat, etc.</p>
-            <p>WordPlay can also solve analogies using linear combinations of words</p>
-            <p>Enter <b>A - B + X</b> to solve analogies of the form <b>B</b> is to <b>A</b> as <b>X</b> is to <b>??</b>
+            <p>WordPlay uses Natural Language Processing (NLP) to find semantically similar words to the input.
+                For example, <b>cat</b> would return: dog, rabbit, monkey, rat, etc.</p>
+            <p>WordPlay can also solve analogies using linear combinations of words.
+                Enter <b>A - B + X</b> to solve analogies of the form <b>B</b> is to <b>A</b> as <b>X</b> is to
+                <b>??</b>
             </p>
             <p>For example, <b>paris - france + germany</b> should return <b>berlin</b> <br> (<b>France</b> is to
-                <b>Paris</b> as <b>Germany</b> is to <b>Berlin</b>)</p>
+                <b>Paris</b> as <b>Germany</b> is to <b>Berlin</b>).</p>
+            <p>Other analogies you can try include: <b>king&nbsp;-&nbsp;man&nbsp;+&nbsp;woman</b>, <b>backpack&nbsp;-&nbsp;school&nbsp;+&nbsp;office</b>, or <b>dancer&nbsp;-&nbsp;dance&nbsp;+&nbsp;art</b></p>
 
         </div>
 
