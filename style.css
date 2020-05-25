@@ -8,6 +8,7 @@ html,
 body {
   height: 100%;
   overflow-x: hidden;
+  color: #333;
 }
 
 body {
@@ -20,12 +21,11 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
-  color: #333;
 }
 
 .wrapper {
   width: 90%;
-  max-width: 750px;
+  max-width: 1200px;
   margin: 0 auto;
   font-size: 22px;
   flex: 1 0;
@@ -36,24 +36,21 @@ body {
   line-height: 1.5;
 }
 
-.wrapper a {
+.about a {
   color: hsl(0, 100%, 33%);
   text-decoration: none;
   transition: color 200ms;
 }
 
-.wrapper a:hover {
+.about a:hover {
   color: hsl(0, 100%, 20%);
 }
 
-#Projects {
-  height: 100vh;
-  width: 100%;
-}
-
-canvas[resize] {
-  width: 100%;
-  height: 100vh;
+.about {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
 }
 
 h1 {
@@ -87,6 +84,8 @@ h1 {
 }
 
 .icons a {
+  color: inherit;
+  text-decoration: none;
   margin-right: 0.3em;
   margin-left: 0.3em;
 }
@@ -136,12 +135,39 @@ h1 {
 .breweries p {
   font-size: 1rem;
   line-height: 1.5;
-  padding: 1rem 0.75rem;
+  padding: 1rem 1.5rem;
   color: #666666;
   margin: 0;
 }
 
-/* .breweries > ul > li > a {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-} */
+.breweries a {
+  text-decoration: none;
+}
+
+.breweries a:hover {
+  text-decoration: underline;
+}
+
+.wordplay a {
+  color: #1cb24b;
+}
+
+.sudokusolver a {
+  color: #00a3e9;
+}
+
+.flappybird a {
+  color: #ff8022;
+}
+
+.dollargame a {
+  color: #3d45cd;
+}
+
+.csgomodel a {
+  color: #808080;
+}
+
+.calcsolver a {
+  color: #ee151e;
+}
